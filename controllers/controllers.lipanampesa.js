@@ -2,10 +2,6 @@ import request from "request";
 import 'dotenv/config';
 import {getTimestamp} from "../Utils/utils.timestamp.js";
 
-// @desc initiate stk push
-// @method POST
-// @route /stkPush
-// @access public
 export const initiateSTKPush = async(req, res) => {
     try {
         const {amount, phone, Order_ID} = req.body;
@@ -13,7 +9,6 @@ export const initiateSTKPush = async(req, res) => {
         const auth = "Bearer " + req.safaricom_access_token;
 
         const timestamp = getTimestamp();
-        //shortcode + passkey + timestamp
         const password = new Buffer.from(process.env.BUSINESS_SHORT_CODE + process.env.PASS_KEY + timestamp).toString('base64');
 
         // Get Supabase API URL and table name from .env
