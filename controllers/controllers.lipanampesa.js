@@ -38,7 +38,7 @@ export const initiateSTKPush = async(req, res) => {
                     "PartyB": process.env.BUSINESS_SHORT_CODE,
                     "PhoneNumber": phone,
                     "CallBackURL": `${callback_url}&Order_ID=eq.${Order_ID}`,
-                    "AccountReference": "Wamaitha Online Shop",
+                    "AccountReference": "Daraja  Online Shop",
                     "TransactionDesc": "Paid online"
                 }
             },
@@ -63,12 +63,7 @@ export const initiateSTKPush = async(req, res) => {
     }
 };
 
-// ... (stkPushCallback and confirmPayment remain the same)
 
-// @desc callback route Safaricom will post transaction status
-// @method POST
-// @route /stkPushCallback/:Order_ID
-// @access public
 export const stkPushCallback = async(req, res) => {
     try{
 
@@ -117,10 +112,7 @@ export const stkPushCallback = async(req, res) => {
     }
 }
 
-// @desc Check from safaricom servers the status of a transaction
-// @method GET
-// @route /confirmPayment/:CheckoutRequestID
-// @access public
+
 export const confirmPayment = async(req, res) => {
     try{
 

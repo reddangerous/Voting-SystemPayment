@@ -14,5 +14,3 @@ export const  getTimestamp = () => {
     return dateObject.getFullYear() + "" + month + "" + day + "" +
         hour + "" + minute + "" + second;
 }
-
-
